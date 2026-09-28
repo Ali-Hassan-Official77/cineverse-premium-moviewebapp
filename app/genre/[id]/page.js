@@ -1,0 +1,3 @@
+import {tmdb} from "@/lib/tmdb";import MovieGrid from "@/components/MovieGrid";
+export const revalidate=1800;
+export default async function GenrePage({params}){const[g,m]=await Promise.all([tmdb.genres(),tmdb.byGenre(params.id,1)]);const name=g?.genres?.find(x=>String(x.id)===params.id)?.name||"Films";return <div className="page-shell"><p className="eyebrow">Genre collection</p><h1 className="page-title">{name}</h1><p className="page-subtitle">A live collection of {name.toLowerCase()} movies sourced through TMDB.</p><div className="mt-10"><MovieGrid initialMovies={m?.results||[]} totalPages={m?.total_pages||1} fetchUrl={`/api/genre/${params.id}`}/></div></div>}

@@ -1,0 +1,2 @@
+"use client";import {motion,useReducedMotion} from "framer-motion";
+export default function Reveal({children,delay=0,y=18,className="",as="div"}){const reduce=useReducedMotion();if(reduce){const Static=as;return <Static className={className}>{children}</Static>}const C=motion[as]||motion.div;return <C initial={{opacity:0,y}} whileInView={{opacity:1,y:0}} viewport={{once:true,margin:"-70px"}} transition={{duration:.55,delay,ease:[.22,1,.36,1]}} className={className}>{children}</C>}
