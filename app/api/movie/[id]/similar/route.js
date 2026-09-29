@@ -2,7 +2,7 @@ import { NextResponse } from "next/server";
 
 const BASE_URL = process.env.TMDB_BASE_URL || "https://api.themoviedb.org/3";
 const TOKEN = process.env.API_ACCESS_TOKEN;
-
+export const runtime = 'edge';
 // GET /api/movie/27205/similar?page=2
 export async function GET(request, { params }) {
   const { searchParams } = new URL(request.url);

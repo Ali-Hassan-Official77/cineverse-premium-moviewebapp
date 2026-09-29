@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { tmdb } from "@/lib/tmdb";
-
+export const runtime = 'edge';
 // GET /api/search?q=inception&page=1
 // Backend endpoint used by the client-side search dropdown so the TMDB
 // token never has to be exposed to the browser.

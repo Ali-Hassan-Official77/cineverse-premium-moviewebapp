@@ -1,1 +1,2 @@
+export const runtime = 'edge';
 export default function Loading(){return <div className="page-shell"><div className="skeleton h-3 w-32 rounded-full"/><div className="skeleton mt-5 h-14 w-[min(620px,90%)] rounded-2xl"/><div className="skeleton mt-3 h-4 w-[min(520px,80%)] rounded-full"/><div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-6 gap-4 mt-12">{Array.from({length:12}).map((_,i)=><div key={i} className="skeleton skeleton-card"/> )}</div></div>}

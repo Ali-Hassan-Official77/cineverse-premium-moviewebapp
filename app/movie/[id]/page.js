@@ -16,7 +16,7 @@ import RatingBadge from "@/components/RatingBadge";
 import TrailerButton from "@/components/TrailerButton";
 import SaveButton from "@/components/SaveButton";
 import Reveal from "@/components/Reveal";
-
+export const runtime = 'edge';
 export const revalidate = 1800;
 
 export async function generateMetadata({ params }) {

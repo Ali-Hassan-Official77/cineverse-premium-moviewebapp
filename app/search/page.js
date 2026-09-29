@@ -1,4 +1,5 @@
 import {tmdb} from "@/lib/tmdb";import MovieGrid from "@/components/MovieGrid";
 export const revalidate=0;
+export const runtime = 'edge';
 export async function generateMetadata({searchParams}){const q=searchParams?.q||"";return{title:q?`${q} — Cineverse`:"Search — Cineverse"}}
 export default async function SearchPage({searchParams}){const query=searchParams?.q?.trim()||"";const data=query?await tmdb.search(query,1):{results:[],total_pages:0};return <div className="page-shell"><p className="eyebrow">Search the universe</p><h1 className="page-title">{query?<>Results for “{query}”</>:"What do you want to watch?"}</h1><p className="page-subtitle">{query?`${data.total_results??data.results?.length??0} titles found.`:"Use the search field above to discover movies and series."}</p>{query&&<div className="mt-10"><MovieGrid initialMovies={data.results||[]} totalPages={data.total_pages||1} fetchUrl={`/api/search?q=${encodeURIComponent(query)}`}/></div>}</div>}

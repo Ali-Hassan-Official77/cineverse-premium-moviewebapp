@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { tmdb } from "@/lib/tmdb";
-
+export const runtime = 'edge';
 // GET /api/genre/28?page=2
 // Backend endpoint the "Load more" control on the genre page calls for
 // subsequent pages, so only the first page needs a full server render.
