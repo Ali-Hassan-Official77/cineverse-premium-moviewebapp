@@ -4,7 +4,4 @@ import Footer from "@/components/Footer";
 import AppProviders from "@/components/AppProviders";
 export const runtime = 'edge';
 export const metadata={title:"Cineverse — The Movie Universe",description:"Discover movies, series and stories worth watching.",icons:{icon:"/cineverse-icon.png"}};
-export default function RootLayout({children}){return <html lang="en" data-theme="dark"><body className="min-h-screen"><AppProviders><Navbar/><main>{children}</main><Footer/></AppProviders>
-  
-  <script src="https://cdn.zanderio.ai/widget/loader.js" data-id="wdg_qo3J5hMvkNAdm6ECxIbiOIRu" defer></script>
-  </body></html>}
+export default function RootLayout({children}){return <html lang="en" data-theme="dark"><body className="min-h-screen"><AppProviders><Navbar/><main>{children}</main><Footer/></AppProviders><script src="https://cdn.zanderio.ai/widget/loader.js" data-id="wdg_qo3J5hMvkNAdm6ECxIbiOIRu" defer></script></body></html>}
